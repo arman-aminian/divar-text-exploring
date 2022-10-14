@@ -5,10 +5,11 @@ def get_tokens(last_post_date, city_number, post_category='apartment-sell', n_pa
     # example:
     #   url = 'https://api.divar.ir/v8/web-search/1/apartment-sell'
     #   last_post_date = 1650392836073764
+    #   city_number = 1
 
-    url = 'https://api.divar.ir/v8/web-search/{city_number}/{post_categgory}'.format(
+    url = 'https://api.divar.ir/v8/web-search/{city_number}/{post_category}'.format(
         city_number=city_number,
-        post_categgory=post_category
+        post_category=post_category
     )
 
     headers = {
@@ -28,5 +29,3 @@ def get_tokens(last_post_date, city_number, post_category='apartment-sell', n_pa
             list_of_tokens.append(token)
 
     return list_of_tokens
-
-# get_tokens('https://api.divar.ir/v8/web-search/1/apartment-sell', 1650392836073764)
