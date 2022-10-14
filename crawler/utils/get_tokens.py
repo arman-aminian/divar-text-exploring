@@ -1,18 +1,23 @@
 import requests
 
 
-def get_tokens(url, last_post_date, n_pages=4):
+def get_tokens(last_post_date, city_number, post_category='apartment-sell', n_pages=4):
     # example:
     #   url = 'https://api.divar.ir/v8/web-search/1/apartment-sell'
     #   last_post_date = 1650392836073764
 
+    url = 'https://api.divar.ir/v8/web-search/{city_number}/{post_categgory}'.format(
+        city_number=city_number,
+        post_categgory=post_category
+    )
+
     headers = {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
     }
 
     list_of_tokens = []
     for i in range(n_pages):
-        json = {"json_schema": {"category": {"value": "apartment-sell"}},
+        json = {"json_schema": {"category": {"value": post_category}},
                 "last-post-date": last_post_date}
         res = requests.post(url, json=json, headers=headers)
         data = res.json()
@@ -23,3 +28,5 @@ def get_tokens(url, last_post_date, n_pages=4):
             list_of_tokens.append(token)
 
     return list_of_tokens
+
+# get_tokens('https://api.divar.ir/v8/web-search/1/apartment-sell', 1650392836073764)
