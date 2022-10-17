@@ -22,6 +22,8 @@ class PostsSpider(scrapy.Spider):
         address = response.css('div div.kt-page-title__subtitle--responsive-sized::text').extract()
         price = response.css('div p.kt-unexpandable-row__value::text').extract_first()
 
+        description = response.css('div p.kt-description-row__text--primary').extract_first()
+
         yield {
             'Area': area,
             'Construction': construction,
@@ -30,5 +32,6 @@ class PostsSpider(scrapy.Spider):
             'Parking': parking,
             "Elevator": elevator,
             'Address': address,
-            'Price': price
+            'Price': price,
+            'Description': description
         }
