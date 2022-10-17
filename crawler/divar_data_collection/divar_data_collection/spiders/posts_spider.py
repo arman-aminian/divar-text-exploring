@@ -1,11 +1,11 @@
 import scrapy
-from crawler.utils.get_tokens import get_tokens
-
+from divar_data_collection.utils.get_tokens import get_tokens
 url = 'https://divar.ir/v/-/{post_token}'
 
 
 class PostsSpider(scrapy.Spider):
     name = 'divar'
+    # start_urls = [url.format(post_token=token) for token in ['asfsadf', 'asdfaf']]
     start_urls = [url.format(post_token=token) for token in get_tokens(1650392836073764, 1, n_pages=2)]
 
     def parse(self, response, **kwargs):
