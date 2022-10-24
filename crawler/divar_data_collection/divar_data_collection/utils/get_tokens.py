@@ -4,7 +4,7 @@ import requests
 def get_tokens(last_post_date, city_number, post_category='apartment-sell', n_pages=4):
     # example:
     #   url = 'https://api.divar.ir/v8/web-search/1/apartment-sell'
-    #   last_post_date = 1650392836073764
+    #   last_post_date = 1666590383086491
     #   city_number = 1
 
     url = 'https://api.divar.ir/v8/web-search/{city_number}/{post_category}'.format(
