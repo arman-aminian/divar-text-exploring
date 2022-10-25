@@ -4,7 +4,8 @@ url = 'https://divar.ir/v/-/{post_token}'
 cities = {
     'tehran': 1,
     'mashhad': 3,
-    'isfahan': 4
+    'isfahan': 4,
+    'ardabil': 17
 }
 
 
