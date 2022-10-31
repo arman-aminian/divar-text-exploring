@@ -14,7 +14,7 @@ cities = {
 class PostsSpider(scrapy.Spider):
     name = 'divar'
 
-    start_urls = [url.format(post_token=token) for token in get_tokens(1666602420815446, cities['tabriz'], n_pages=19)]
+    start_urls = [url.format(post_token=token) for token in get_tokens(1666602420815446, cities['shiraz'], n_pages=19)]
 
     def parse(self, response, **kwargs):
         informations = response.css('div span.kt-group-row-item__value::text')
