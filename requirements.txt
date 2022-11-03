@@ -2,3 +2,9 @@ requests==2.28.1
 
 Scrapy~=2.7.0
 itemadapter~=0.7.0
+
+tqdm==4.59.0
+nltk==3.3
+sklearn
+hazm
+emoji==1.6.1
